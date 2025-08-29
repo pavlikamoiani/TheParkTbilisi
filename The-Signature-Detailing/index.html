@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Park Detailing</title>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon" />
+
+  <!-- Font Awesome (Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav id="navv" data-aos="fade-down">
+    <input type="checkbox" id="check" />
+    <label for="check" class="checkbtn" aria-label="Open Menu">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <img class="logoo" data-aos="fade-down" src="./Images/logo.png" alt="The Signature Detailing Logo" />
+
+    <ul id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#our-services">Services</a></li>
+      <li><a href="#our-work">Our Work</a></li>
+      <li><a href="#footer">Contact</a></li>
+
+      <!-- <a href="https://www.facebook.com/Theparki" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook social-iconn" id="facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/the.park.tbilisi/" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram social-iconn insta" id="instagram"></i>
+      </a>
+      <a href="https://wa.me/995596502222" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp social-iconn insta" id="fa-whatsapp"></i>
+      </a> -->
+
+      <!-- language selection -->
+      <li>
+        <a href="#" class="lang" id="lang-en" data-lang="en">EN</a>
+        <a href="#" class="lang" id="lang-ge" data-lang="ge">GE</a>
+        <a href="#" class="lang" id="lang-ru" data-lang="ru">RU</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="./Images/preview.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+      <h1 id="hero-title">DETAILING CENTER
+        IN TBILISI - The Park.</h1>
+      <p id="hero-desc">Professional car care and protection,
+        with the best result and level of service: car polishing, ceramic coating, pasting in a protective film, car
+        cleaning, paintless dent removal, interior restoration.</p>
+      <a href="https://wa.me/995596502222" target="_blank" class="book-now" id="book-now-btn">
+        Book Now
+      </a>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="our-services" style="scroll-margin-top: 50px;">
+    <div class="how-it-works">
+      <div class="how-it-works-header" data-aos="fade-up">
+        <h1 id="services-title">Our Services</h1>
+      </div>
+
+      <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="step-number">
+          <i class="fas fa-car" style="font-size:2.5rem;"></i>
+        </div>
+        <h3 id="service-wash">Car Wash</h3>
+        <p id="service-wash-desc">Thorough exterior and interior cleaning for a spotless finish.</p>
+      </div>
+
+      <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-number">
+          <i class="fas fa-shield-alt" style="font-size:2.5rem;"></i>
+        </div>
+        <h3 id="service-ppf">PPF Wrap</h3>
+        <p id="service-ppf-desc">Paint Protection Film application to shield your car from scratches and chips.</p>
+      </div>
+
+      <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="step-number">
+          <i class="fas fa-magic" style="font-size:2.5rem;"></i>
+        </div>
+        <h3 id="service-polish">Polishing</h3>
+        <p id="service-polish-desc">Professional polishing to restore gloss and remove imperfections.</p>
+      </div>
+
+      <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="step-number">
+          <i class="fas fa-tint" style="font-size:2.5rem;"></i>
+        </div>
+        <h3 id="service-ceramic">Ceramic Coating</h3>
+        <p id="service-ceramic-desc">Advanced ceramic protection for long-lasting shine and durability.</p>
+      </div>
+
+      <div class="step-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="step-number">
+          <i class="fas fa-wind" style="font-size:2.5rem;"></i>
+        </div>
+        <h3 id="service-dry">Dry Cleaning</h3>
+        <p id="service-dry-desc">Deep interior dry cleaning for seats, carpets, and surfaces.</p>
+      </div>
+
+      <div class="step-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="step-number">
+          <i class="fas fa-volume-mute" style="font-size:2.5rem;"></i>
+        </div>
+        <h3 id="service-sound">Sound Proofing</h3>
+        <p id="service-sound-desc">Reduce road noise and enhance comfort with professional sound proofing.</p>
+      </div>
+
+      <div class="step-card" data-aos="fade-up" data-aos-delay="700">
+        <div class="step-number">
+          <i class="fas fa-door-open" style="font-size:2.5rem;"></i>
+        </div>
+        <h3 id="service-door">Door Vacuum</h3>
+        <p id="service-door-desc">Specialized vacuuming for door panels and hard-to-reach areas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Work (Pinterest-style Gallery) -->
+  <section id="our-work" class="our-work-section">
+    <div class="our-work-header" data-aos="fade-up">
+      <h1 id="work-title">Our Work</h1>
+      <p class="section-subtitle" id="work-subtitle">See some of our recent detailing projects</p>
+    </div>
+    <div class="work-gallery" id="workGallery">
+      <!-- Images will be rendered by JS -->
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <button id="showMoreBtn" class="book-nowww">Show More</button>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h1 id="testimonials-title">What Our Customers Say</h1>
+        <p class="section-subtitle" id="testimonials-subtitle">Don't just take our word for it - hear from our satisfied
+          clients</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+          </div>
+          <p class="testimonial-text" id="testimonial-1">The attention to detail was absolutely incredible. My
+            10-year-old car looks brand
+            new again! The ceramic coating they applied has made maintenance so much easier.</p>
+          <div class="customer-info">
+            <div class="customer-avatar">
+              <img src="./Images/Ford Explorere.jfif" alt="Customer Photo" loading="lazy">
+            </div>
+            <div class="customer-details">
+              <h4 id="customer-1-name">Michael Thompson</h4>
+              <p id="customer-1-car">Ford Explorer Owner</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+          </div>
+          <p class="testimonial-text" id="testimonial-2">Professional service from start to finish. They took extra care
+            with my car and
+            the paint correction removed all the swirl and scratches marks I thought were permanent.</p>
+          <div class="customer-info">
+            <div class="customer-avatar">
+              <img src="./Images/BMW 5.jpg" alt="Customer Photo" loading="lazy">
+            </div>
+            <div class="customer-details">
+              <h4 id="customer-2-name">Sarah Johnson</h4>
+              <p id="customer-2-car">BMW Series 5 Owner</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="http://www.w3.org/2000/svg" width="25px"
+              fill="#f1c40f">
+              <path d="m233-120 93-304L80-600h304l96-320 96 320h304L634-424l93 304-247-188-247 188Z" />
+            </svg>
+          </div>
+          <p class="testimonial-text" id="testimonial-3">I've tried many detailing services over the years, but none
+            compare to the quality
+            and results I received here. The interior detailing transformed my car's cabin completely.</p>
+          <div class="customer-info">
+            <div class="customer-avatar">
+              <img src="./Images/Mercedes GLC.webp" alt="Customer Photo" loading="lazy">
+            </div>
+            <div class="customer-details">
+              <h4 id="customer-3-name">David Rodriguez</h4>
+              <p id="customer-3-car">Mercedes GLC-300 Owner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq-sectionn">
+    <div class="containerr">
+      <div class="faq-header" data-aos="fade-up">
+        <h1 id="faq-title">Frequently Asked Questions</h1>
+        <p id="faq-desc">Find answers of common questions about our services, process, and policies.</p>
+      </div>
+
+      <div class="faq-container" data-aos="fade-up" data-aos-delay="150">
+        <div class="faq-item" data-category="services">
+          <div class="faq-question" id="faq-q1">
+            What services do you offer?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content" id="faq-a1">
+              We offer a comprehensive range of detailing services including paint correction, ceramic coating, paint
+              protection film, interior detailing, and maintenance packages. Each service is tailored to your vehicle's
+              specific needs to ensure optimal protection and appearance.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="process">
+          <div class="faq-question" id="faq-q2">
+            How long does the detailing process take?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content" id="faq-a2">
+              The duration depends on the service package and condition of your vehicle. A basic interior detail
+              typically takes 3-4 hours, while a full paint correction and ceramic coating can take 2-3 days. We'll
+              provide you with an accurate timeframe during your consultation.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="pricing">
+          <div class="faq-question" id="faq-q3">
+            How much does a detailing service cost?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content" id="faq-a3">
+              Pricing varies based on your vehicle's size, condition, and the specific services requested. Our packages
+              start at $150 for basic detailing and go up to $1,500+ for comprehensive paint correction and ceramic
+              coating treatments. Contact us for a personalized quote based on your needs.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="warranty">
+          <div class="faq-question" id="faq-q4">
+            Do you offer warranties on your services?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content" id="faq-a4">
+              Yes, we stand behind our work with industry-leading warranties. Our ceramic coatings come with a 2-5 year
+              warranty depending on the product selected, and paint protection film includes a 10-year warranty against
+              yellowing, cracking, and peeling. All warranties require proper maintenance as outlined in our care guide.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="services">
+          <div class="faq-question" id="faq-q5">
+            What is ceramic coating and how does it work?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content" id="faq-a5">
+              Ceramic coating is a liquid polymer applied to the exterior of a vehicle that chemically bonds with the
+              factory paint, creating a layer of protection. It provides superior protection against UV rays, chemical
+              stains, and minor scratches while creating a hydrophobic surface that repels water and makes cleaning
+              easier.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="process">
+          <div class="faq-question" id="faq-q6">
+            Do I need to make an appointment?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content" id="faq-a6">
+              Yes, we operate by appointment only to ensure we can dedicate the proper time and attention to each
+              vehicle. This allows us to schedule our work efficiently and provide you with the best possible service.
+              You can book an appointment through our website or by calling our studio directly.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="pricing">
+          <div class="faq-question" id="faq-q7">
+            What payment methods do you accept?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content" id="faq-a7">
+              We accept all major credit cards (Visa, MasterCard, American Express, Discover), debit cards, cash, and
+              digital payment methods like Apple Pay and Google Pay. For larger projects, we also offer financing
+              options through our partner lenders.
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer id="footer" data-aos="fade-up">
+    <div class="footer-content">
+
+
+      <div class="footer-section">
+        <h3><i class="fas fa-address-book"></i> <span id="footer-contact-title">Contact</span></h3>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <p><a href="tel:+995 596 502 222" id="footer-phone">+995 596 502 222</a></p>
+        </div>
+      </div>
+
+      <div class="footer-section last">
+        <h3><i class="fas fa-clock"></i> <span id="footer-hours-title">Hours</span></h3>
+        <p id="footer-hours-desc"><b>We are open every day:</b> 8:00 AM - 7:00 PM</p>
+      </div>
+      <div class="footer-section">
+        <h3><i class="fas fa-map-marker-alt"></i> <span id="footer-location-title">Location</span></h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.440411730577!2d44.75516489999999!3d41.7110145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4044730031a5120d%3A0x151fb43a84ebb50f!2sThe%20Park%20Detailing%20and%20Car%20Wash!5e0!3m2!1sru!2sge!4v1756394178004!5m2!1sru!2sge"
+          width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts (Bootstrap + AOS + Main) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./script.js"></script>
+  <script src="./gallery.js"></script>
+  <script src="./translation.js"></script>
+</body>
+
+</html>
