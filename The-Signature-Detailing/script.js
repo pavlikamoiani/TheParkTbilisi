@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // ====== Navbar shadow on scroll ======
-  const nav = document.getElementById('navv');
+  const nav = document.getElementById('nav');
   const onScroll = () => {
     if (window.scrollY > 10) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
@@ -68,47 +68,47 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-    const form = document.getElementById("myForm");
-    const nameField = document.getElementById("name");
-    const emailField = document.getElementById("email");
-    const messageField = document.getElementById("message");
+const form = document.getElementById("myForm");
+const nameField = document.getElementById("name");
+const emailField = document.getElementById("email");
+const messageField = document.getElementById("message");
 
-    const nameError = document.getElementById("nameError");
-    const emailError = document.getElementById("emailError");
-    const messageError = document.getElementById("messageError");
-    const formSuccess = document.getElementById("formSuccess");
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const messageError = document.getElementById("messageError");
+const formSuccess = document.getElementById("formSuccess");
 
-    form.addEventListener("submit", function(e){
-      let isValid = true;
-      nameError.textContent = "";
-      emailError.textContent = "";
-      messageError.textContent = "";
-      formSuccess.textContent = "";
-      formSuccess.classList.remove("show");
+form.addEventListener("submit", function (e) {
+  let isValid = true;
+  nameError.textContent = "";
+  emailError.textContent = "";
+  messageError.textContent = "";
+  formSuccess.textContent = "";
+  formSuccess.classList.remove("show");
 
-      if(nameField.value.trim() === ""){
-        nameError.textContent = "⚠️ Please enter your name.";
-        isValid = false;
-      }
+  if (nameField.value.trim() === "") {
+    nameError.textContent = "⚠️ Please enter your name.";
+    isValid = false;
+  }
 
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      if(emailField.value.trim() === ""){
-        emailError.textContent = "⚠️ Please enter your email.";
-        isValid = false;
-      } else if(!emailField.value.match(emailPattern)){
-        emailError.textContent = "⚠️ Please enter a valid email.";
-        isValid = false;
-      }
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (emailField.value.trim() === "") {
+    emailError.textContent = "⚠️ Please enter your email.";
+    isValid = false;
+  } else if (!emailField.value.match(emailPattern)) {
+    emailError.textContent = "⚠️ Please enter a valid email.";
+    isValid = false;
+  }
 
-      if(messageField.value.trim() === ""){
-        messageError.textContent = "⚠️ Please enter your message.";
-        isValid = false;
-      }
+  if (messageField.value.trim() === "") {
+    messageError.textContent = "⚠️ Please enter your message.";
+    isValid = false;
+  }
 
-      if(!isValid){
-        e.preventDefault();
-      } else {
-        formSuccess.textContent = "✅ Your message has been sent successfully!";
-        formSuccess.classList.add("show");
-      }
-    });
+  if (!isValid) {
+    e.preventDefault();
+  } else {
+    formSuccess.textContent = "✅ Your message has been sent successfully!";
+    formSuccess.classList.add("show");
+  }
+});
