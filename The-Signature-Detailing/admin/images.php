@@ -1,5 +1,4 @@
 <?php
-// Handle hero video upload
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_hero_video'])) {
 	$target_dir = dirname(__DIR__) . "/Images/";
 	if (!file_exists($target_dir)) mkdir($target_dir, 0777, true);
@@ -11,33 +10,72 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_hero_video']))
 		$stmt = $conn->prepare("INSERT INTO settings (name, value) VALUES ('hero_video', ?)");
 		$stmt->bind_param("s", $file_name);
 		$stmt->execute();
-	}
-}
-
-// Handle gallery upload
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_gallery'])) {
-	$type = $_POST['type'];
-	$target_dir = dirname(__DIR__) . "/gallery/";
-	if (!file_exists($target_dir)) mkdir($target_dir, 0777, true);
-	$file_ext = pathinfo($_FILES["gallery_file"]["name"], PATHINFO_EXTENSION);
-	$file_name = time() . "_" . uniqid() . "." . $file_ext;
-	$target_file = $target_dir . $file_name;
-	if (move_uploaded_file($_FILES["gallery_file"]["tmp_name"], $target_file)) {
-		$stmt = $conn->prepare("INSERT INTO gallery (file, type) VALUES (?, ?)");
-		$stmt->bind_param("ss", $file_name, $type);
-		$stmt->execute();
-		// Redirect to avoid resubmission and refresh gallery
 		header("Location: ?tab=images");
 		exit;
 	}
 }
 
-// Handle gallery delete
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_gallery'])) {
+	$type = $_POST['type'];
+	$target_dir = dirname(__DIR__) . "/gallery/";
+	if (!file_exists($target_dir)) mkdir($target_dir, 0777, true);
+
+	// Support multiple files
+	$files = $_FILES["gallery_file"];
+	$file_count = is_array($files['name']) ? count($files['name']) : 0;
+	if ($file_count > 0) {
+		for ($i = 0; $i < $file_count; $i++) {
+			if ($files['error'][$i] === UPLOAD_ERR_OK) {
+				$file_ext = pathinfo($files["name"][$i], PATHINFO_EXTENSION);
+				$file_name = time() . "_" . uniqid() . "." . $file_ext;
+				$target_file = $target_dir . $file_name;
+				if (move_uploaded_file($files["tmp_name"][$i], $target_file)) {
+					$stmt = $conn->prepare("INSERT INTO gallery (file, type) VALUES (?, ?)");
+					$stmt->bind_param("ss", $file_name, $type);
+					$stmt->execute();
+				}
+			}
+		}
+		header("Location: ?tab=images");
+		exit;
+	} else {
+		if (isset($files["tmp_name"]) && is_string($files["tmp_name"]) && $files["error"] === UPLOAD_ERR_OK) {
+			$file_ext = pathinfo($files["name"], PATHINFO_EXTENSION);
+			$file_name = time() . "_" . uniqid() . "." . $file_ext;
+			$target_file = $target_dir . $file_name;
+			if (move_uploaded_file($files["tmp_name"], $target_file)) {
+				$stmt = $conn->prepare("INSERT INTO gallery (file, type) VALUES (?, ?)");
+				$stmt->bind_param("ss", $file_name, $type);
+				$stmt->execute();
+			}
+			header("Location: ?tab=images");
+			exit;
+		}
+	}
+}
+
 if (isset($_GET['delete_gallery'])) {
 	$id = (int)$_GET['delete_gallery'];
+	// Get file name before deleting from DB
+	$stmt = $conn->prepare("SELECT file FROM gallery WHERE id=?");
+	$stmt->bind_param("i", $id);
+	$stmt->execute();
+	$stmt->bind_result($file_name);
+	$stmt->fetch();
+	$stmt->close();
+
+	if (!empty($file_name)) {
+		$file_path = dirname(__DIR__) . "/gallery/" . $file_name;
+		if (file_exists($file_path)) {
+			unlink($file_path);
+		}
+	}
+
 	$stmt = $conn->prepare("DELETE FROM gallery WHERE id=?");
 	$stmt->bind_param("i", $id);
 	$stmt->execute();
+	header("Location: ?tab=images");
+	exit;
 }
 
 $hero_video = '';
@@ -79,7 +117,7 @@ $gallery = $conn->query("SELECT * FROM gallery ORDER BY id DESC");
 		</div>
 		<div class="form-group">
 			<label>File</label>
-			<input type="file" name="gallery_file" accept="image/*,video/mp4" required>
+			<input type="file" name="gallery_file[]" accept="image/*,video/mp4" multiple required>
 		</div>
 		<div class="modal-btns">
 			<button type="submit" class="btn-add">Upload</button>

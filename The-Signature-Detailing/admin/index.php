@@ -103,6 +103,18 @@ if ($tab === 'products') {
 		exit;
 	}
 }
+
+if (
+	$tab === 'images' &&
+	(
+		($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['upload_hero_video']) || isset($_POST['upload_gallery'])))
+		|| isset($_GET['delete_gallery'])
+	)
+) {
+	include __DIR__ . '/images.php';
+	exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">

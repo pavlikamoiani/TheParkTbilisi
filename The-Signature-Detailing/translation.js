@@ -58,7 +58,8 @@ const translations = {
 		'nav-services': 'Services',
 		'nav-work': 'Our Work',
 		'nav-contact': 'Contact',
-		'nav-products': 'Shop at'
+		'nav-products': 'Shop at',
+		'categories-title': 'SHOP POPULAR CATEGORIES'
 	},
 	ru: {
 		'hero-title': 'ЦЕНТР ДЕТЕЙЛИНГА В ТБИЛИСИ - The Park.',
@@ -118,7 +119,8 @@ const translations = {
 		'nav-services': 'Услуги',
 		'nav-work': 'Наши работы',
 		'nav-contact': 'Контакты',
-		'nav-products': 'Продукты'
+		'nav-products': 'Продукты',
+		'categories-title': 'ПОПУЛЯРНЫЕ КАТЕГОРИИ'
 	},
 	ge: {
 		'hero-title': 'დეტეილინგ ცენტრი თბილისში - The Park.',
@@ -178,7 +180,8 @@ const translations = {
 		'nav-services': 'სერვისები',
 		'nav-work': 'ჩვენი ნამუშევრები',
 		'nav-contact': 'კონტაქტი',
-		'nav-products': 'პროდუქტები'
+		'nav-products': 'პროდუქტები',
+		'categories-title': 'პოპულარული კატეგორიები'
 	}
 };
 

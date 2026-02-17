@@ -7,7 +7,7 @@ $res = $conn->query("SELECT value FROM settings WHERE name='hero_video' LIMIT 1"
 if ($row = $res->fetch_assoc()) $hero_video = './Images/' . htmlspecialchars($row['value']);
 
 $gallery = [];
-$res = $conn->query("SELECT * FROM gallery ORDER BY id DESC LIMIT 8");
+$res = $conn->query("SELECT * FROM gallery ORDER BY id DESC");
 while ($row = $res->fetch_assoc()) $gallery[] = $row;
 ?>
 <?php include 'header.php'; ?>
@@ -102,92 +102,92 @@ while ($row = $res->fetch_assoc()) $gallery[] = $row;
     <p class="section-subtitle" id="work-subtitle">See some of our recent detailing projects</p>
   </div>
   <div class="work-gallery" id="workGallery">
-    <?php foreach ($gallery as $item): ?>
+    <?php
+    $defaultGalleryImage = './Images/logo.png';
+    $i = 0;
+    foreach ($gallery as $item):
+      $file = !empty($item['file']) ? '/gallery/' . htmlspecialchars($item['file']) : $defaultGalleryImage;
+      $hidden = $i >= 8 ? 'style="display:none;"' : '';
+    ?>
       <?php if ($item['type'] === 'image'): ?>
-        <img src="/gallery/<?= htmlspecialchars($item['file']) ?>" style="max-width:320px;max-height:220px;margin:10px;border-radius:12px;box-shadow:0 2px 8px #0002;">
-      <?php elseif ($item['type'] === 'video'): ?>
-        <video src="/gallery/<?= htmlspecialchars($item['file']) ?>" style="max-width:320px;max-height:220px;margin:10px;border-radius:12px;box-shadow:0 2px 8px #0002;" controls></video>
+        <img src="<?= $file ?>" class="gallery-item" <?= $hidden ?>>
+      <?php elseif ($item['type'] === 'video' && !empty($item['file'])): ?>
+        <video src="<?= $file ?>" controls class="gallery-item" <?= $hidden ?>></video>
+      <?php elseif ($item['type'] === 'video' && empty($item['file'])): ?>
+        <img src="<?= $defaultGalleryImage ?>" class="gallery-item" <?= $hidden ?>>
       <?php endif; ?>
-    <?php endforeach; ?>
+    <?php $i++;
+    endforeach; ?>
   </div>
   <div style="text-align:center; margin-top:24px;">
     <button id="showMoreBtn" class="book-nowww">Show More</button>
   </div>
 </section>
 
-<!-- Remove this duplicated nav section -->
-<!--
-<nav id="nav" data-aos="fade-down">
-  <input type="checkbox" id="check" />
-  <label for="check" class="checkbtn" aria-label="Open Menu">
-    <i class="fas fa-bars"></i>
-  </label>
-  <a href="./index.html">
-    <img
-      class="logoo"
-      data-aos="fade-down"
-      src="./Images/logo.png"
-      alt="Logo" />
-  </a>
-  <ul id="navLinks">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#our-services">Services</a></li>
-    <li><a href="#our-work">Our Work</a></li>
-    <li><a href="#footer">Contact</a></li>
-    <li><a href="#products">Products</a></li>
-    <li>
-      <a href="#" class="lang" id="lang-en" data-lang="en">EN</a>
-      <a href="#" class="lang" id="lang-ge" data-lang="ge">GE</a>
-      <a href="#" class="lang" id="lang-ru" data-lang="ru">RU</a>
-    </li>
-  </ul>
-</nav>
--->
+<section id="products" style="padding: 60px 0; background: #fff;">
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <h1 id="categories-title" style="color: #111; text-align: center; font-size: 2.3rem; font-weight: 700; margin-bottom: 40px; letter-spacing: -1px;">
+      SHOP POPULAR CATEGORIES
+    </h1>
+    <div class="categories-grid">
+      <?php
+      require_once __DIR__ . '/db/db.php';
+      $result = $conn->query("SELECT * FROM categories ORDER BY id DESC");
+      $defaultCategoryImage = './Images/logo.png';
 
-<!-- Remove this duplicated footer section -->
-<!--
-<footer id="footer" data-aos="fade-up">
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3><i class="fas fa-address-book"></i> <span id="footer-contact-title">Contact</span></h3>
-      <div class="contact-item">
-        <i class="fas fa-phone"></i>
-        <p><a href="tel:+995 596 502 222" id="footer-phone">+995 596 502 222</a></p>
-      </div>
-    </div>
-
-    <div class="footer-section last">
-      <h3><i class="fas fa-clock"></i> <span id="footer-hours-title">Hours</span></h3>
-      <p id="footer-hours-desc"><b>We are open every day:</b> 8:00 AM - 7:00 PM</p>
-    </div>
-    <div class="footer-section">
-      <h3><i class="fas fa-map-marker-alt"></i> <span id="footer-location-title">Location</span></h3>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.440411730577!2d44.75516489999999!3d41.7110145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4044730031a5120d%3A0x151fb43a84ebb50f!2sThe%20Park%20Detailing%20and%20Car%20Wash!5e0!3m2!1sru!2sge!4v1756394178004!5m2!1sru!2sge"
-        width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      if ($result->num_rows > 0):
+        while ($row = $result->fetch_assoc()):
+          $catImage = (!empty($row['image'])) ? '/categories/' . htmlspecialchars($row['image']) : $defaultCategoryImage;
+      ?>
+          <div class="category-card">
+            <a href="products.php?category_id=<?= $row['id'] ?>" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+              <img src="<?= $catImage ?>" alt="<?= htmlspecialchars($row['name']) ?>" />
+            </a>
+            <div class="category-title">
+              <?= htmlspecialchars($row['name']) ?>
+            </div>
+          </div>
+        <?php
+        endwhile;
+      else: ?>
+        <p style="color: #222; text-align: center; width: 100%;">No categories available.</p>
+      <?php endif; ?>
     </div>
   </div>
-</footer>
-<a
-  href="https://wa.me/995596502222"
-  class="floating-contact"
-  target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-  integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-  crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-  integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-  crossorigin="anonymous"></script>
+</section>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="./script.js"></script>
-<script src="./gallery.js"></script>
-<script src="./translation.js"></script>
-</body>
-</html>
--->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('#workGallery .gallery-item');
+    const btn = document.getElementById('showMoreBtn');
+    let visible = 8;
+    const step = 8;
+
+    function updateGallery() {
+      let shown = 0;
+      items.forEach((el, idx) => {
+        if (idx < visible) {
+          el.style.display = '';
+          shown++;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      if (shown >= items.length) {
+        btn.style.display = 'none';
+      } else {
+        btn.style.display = '';
+      }
+    }
+
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      visible += step;
+      updateGallery();
+    });
+
+    updateGallery();
+  });
+</script>
 
 <?php include 'footer.php'; ?>

@@ -41,7 +41,15 @@ $products_result = $products_stmt->get_result();
 						</div>
 						<div class="product-info">
 							<div class="title"><?= htmlspecialchars($row['title']) ?></div>
-							<div class="description"><?= htmlspecialchars($row['description']) ?></div>
+							<div class="description">
+								<?php
+								$desc = $row['description'];
+								$desc_limit = 90;
+								$desc_short = mb_substr($desc, 0, $desc_limit);
+								echo htmlspecialchars($desc_short);
+								if (mb_strlen($desc) > $desc_limit) echo '...';
+								?>
+							</div>
 							<div class="price-section">
 								<div class="price"><?= number_format($row['price'], 0, '.', ' ') ?> GEL</div>
 								<a href="product-details.php?id=<?= $row['id'] ?>" class="btn-add">
