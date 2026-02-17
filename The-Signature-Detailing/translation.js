@@ -53,7 +53,12 @@ const translations = {
 		'footer-phone': '+995 596 502 222',
 		'footer-hours-title': 'Hours',
 		'footer-hours-desc': '<b>We are open every day:</b> 8:00 AM - 7:00 PM',
-		'footer-location-title': 'Location'
+		'footer-location-title': 'Location',
+		'nav-home': 'Home',
+		'nav-services': 'Services',
+		'nav-work': 'Our Work',
+		'nav-contact': 'Contact',
+		'nav-products': 'Shop at'
 	},
 	ru: {
 		'hero-title': 'ЦЕНТР ДЕТЕЙЛИНГА В ТБИЛИСИ - The Park.',
@@ -108,7 +113,12 @@ const translations = {
 		'footer-phone': '+995 596 502 222',
 		'footer-hours-title': 'Время работы',
 		'footer-hours-desc': '<b>Работаем ყოველდღე:</b> 8:00 - 19:00',
-		'footer-location-title': 'Адрес'
+		'footer-location-title': 'Адрес',
+		'nav-home': 'Главная',
+		'nav-services': 'Услуги',
+		'nav-work': 'Наши работы',
+		'nav-contact': 'Контакты',
+		'nav-products': 'Продукты'
 	},
 	ge: {
 		'hero-title': 'დეტეილინგ ცენტრი თბილისში - The Park.',
@@ -163,7 +173,12 @@ const translations = {
 		'footer-phone': '+995 596 502 222',
 		'footer-hours-title': 'სამუშაო საათები',
 		'footer-hours-desc': '<b>ღია ვართ ყოველდღე:</b> 8:00 - 19:00',
-		'footer-location-title': 'მდებარეობა'
+		'footer-location-title': 'მდებარეობა',
+		'nav-home': 'მთავარი',
+		'nav-services': 'სერვისები',
+		'nav-work': 'ჩვენი ნამუშევრები',
+		'nav-contact': 'კონტაქტი',
+		'nav-products': 'პროდუქტები'
 	}
 };
 

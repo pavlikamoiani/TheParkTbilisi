@@ -1,0 +1,43 @@
+<footer id="footer" data-aos="fade-up">
+	<div class="footer-content">
+		<div class="footer-section">
+			<h3><i class="fas fa-address-book"></i> <span id="footer-contact-title">Contact</span></h3>
+			<div class="contact-item">
+				<i class="fas fa-phone"></i>
+				<p><a href="tel:+995 596 502 222" id="footer-phone">+995 596 502 222</a></p>
+			</div>
+		</div>
+
+		<div class="footer-section last">
+			<h3><i class="fas fa-clock"></i> <span id="footer-hours-title">Hours</span></h3>
+			<p id="footer-hours-desc"><b>We are open every day:</b> 8:00 AM - 7:00 PM</p>
+		</div>
+		<div class="footer-section">
+			<h3><i class="fas fa-map-marker-alt"></i> <span id="footer-location-title">Location</span></h3>
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.440411730577!2d44.75516489999999!3d41.7110145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4044730031a5120d%3A0x151fb43a84ebb50f!2sThe%20Park%20Detailing%20and%20Car%20Wash!5e0!3m2!1sru!2sge!4v1756394178004!5m2!1sru!2sge"
+				width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</div>
+</footer>
+<a
+	href="https://wa.me/995596502222"
+	class="floating-contact"
+	target="_blank">
+	<i class="fab fa-whatsapp"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+	integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+	integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+	crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="./script.js"></script>
+<script src="./gallery.js"></script>
+<script src="./translation.js"></script>
+</body>
+
+</html>
