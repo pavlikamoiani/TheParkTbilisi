@@ -10,7 +10,7 @@ $gallery = [];
 $res = $conn->query("SELECT * FROM gallery ORDER BY id DESC");
 while ($row = $res->fetch_assoc()) $gallery[] = $row;
 ?>
-<?php include 'header.php'; ?>
+<?php include './components/header.php'; ?>
 
 <section id="home" class="hero">
   <video autoplay muted loop playsinline>
@@ -190,4 +190,4 @@ while ($row = $res->fetch_assoc()) $gallery[] = $row;
   });
 </script>
 
-<?php include 'footer.php'; ?>
+<?php include './components/footer.php'; ?>

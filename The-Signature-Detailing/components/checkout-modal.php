@@ -25,4 +25,4 @@
 		</form>
 	</div>
 </div>
-<script src="./js/checkout-modal.js"></script>
+<script src="../js/checkout-modal.js"></script>

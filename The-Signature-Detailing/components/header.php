@@ -46,7 +46,6 @@
 		</ul>
 	</nav>
 
-	<!-- Cart Sidebar -->
 	<div id="cartSidebar" class="cart-sidebar">
 		<div class="cart-header">
 			<span>Cart</span>
@@ -59,9 +58,8 @@
 		</div>
 	</div>
 
-	<script src="./js/cart.js"></script>
+	<script src="../js/cart.js"></script>
 
-	<!-- Checkout Modal Include -->
 	<?php include_once __DIR__ . '/checkout-modal.php'; ?>
 
 </body>

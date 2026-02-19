@@ -19,7 +19,7 @@ if (!$category) {
 }
 
 $pageTitle = 'Products - ' . htmlspecialchars($category['name']) . ' | The Park Detailing';
-include 'header.php';
+include './components/header.php';
 
 $products_stmt = $conn->prepare("SELECT * FROM products WHERE category_id = ? ORDER BY id DESC");
 $products_stmt->bind_param("i", $category_id);
@@ -70,6 +70,6 @@ $products_result = $products_stmt->get_result();
 	</div>
 </section>
 
-<?php include 'footer.php'; ?>
+<?php include './components/footer.php'; ?>
 
-<script src="./js/cart.js"></script>
+<script src="../js/cart.js"></script>

@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 			const submitBtn = form.querySelector('.modal-submit');
 			if (submitBtn) submitBtn.disabled = true;
-			fetch('mail-send.php', {
+			fetch('../components/mail-send.php', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: new URLSearchParams({
