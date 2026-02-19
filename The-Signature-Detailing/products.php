@@ -52,9 +52,9 @@ $products_result = $products_stmt->get_result();
 							</div>
 							<div class="price-section">
 								<div class="price"><?= number_format($row['price'], 0, '.', ' ') ?> GEL</div>
-								<a href="product-details.php?id=<?= $row['id'] ?>" class="btn-add">
+								<button class="btn-add" data-id="<?= $row['id'] ?>" data-title="<?= htmlspecialchars($row['title']) ?>" data-price="<?= $row['price'] ?>" data-img="/products/<?= htmlspecialchars($row['image']) ?>" style="background:none;border:none;cursor:pointer;padding:0 8px;">
 									<i class="fas fa-plus"></i>
-								</a>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -71,3 +71,5 @@ $products_result = $products_stmt->get_result();
 </section>
 
 <?php include 'footer.php'; ?>
+
+<script src="./js/cart.js"></script>

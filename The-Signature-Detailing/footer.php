@@ -10,7 +10,7 @@
 
 		<div class="footer-section last">
 			<h3><i class="fas fa-clock"></i> <span id="footer-hours-title">Hours</span></h3>
-			<p id="footer-hours-desc"><b>We are open every day:</b> 8:00 AM - 7:00 PM</p>
+			<p id="footer-hours-desc"><b>We are open every day:</b> 10:00 AM - 9:00 PM</p>
 		</div>
 		<div class="footer-section">
 			<h3><i class="fas fa-map-marker-alt"></i> <span id="footer-location-title">Location</span></h3>
